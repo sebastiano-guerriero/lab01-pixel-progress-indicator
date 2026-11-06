@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-variant-numeric: slashed-zero;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *, *:before, *:after {
+    corner-shape: superellipse(1.33);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input::-moz-search-clear-button {
+    display: none;
+  }
+}
+
+@theme {
+  --font-primary: ui-sans-serif, system-ui, sans-serif;
+
+  --color-black: #000000;
+
+  --shadow-intensity: 1;
+  --shadow-2xs: 0px 1px 0px oklch(from var(--color-black) l c h / calc(0.075 * var(--shadow-intensity)));
+  --shadow-xs:  0px 1px 1px -0.5px oklch(from var(--color-black) l c h / calc(0.18 * var(--shadow-intensity))), 
+                0px 2px 2px -1px oklch(from var(--color-black) l c h / calc(0.04 * var(--shadow-intensity))), 
+                0px 4px 4px -2px oklch(from var(--color-black) l c h / calc(0.02 * var(--shadow-intensity))), 
+                0px 8px 4px -3px oklch(from var(--color-black) l c h / calc(0.01 * var(--shadow-intensity)));
+  --shadow-sm:  0px 1px 2px -0.5px oklch(from var(--color-black) l c h / calc(0.18 * var(--shadow-intensity))), 
+                0px 3px 3px -1px oklch(from var(--color-black) l c h / calc(0.04 * var(--shadow-intensity))), 
+                0px 6px 5px -2px oklch(from var(--color-black) l c h / calc(0.02 * var(--shadow-intensity))), 
+                0px 15px 6px -3px oklch(from var(--color-black) l c h / calc(0.01 * var(--shadow-intensity)));
+  --shadow-md:  0px 1px 3px oklch(from var(--color-black) l c h / calc(0.05 * var(--shadow-intensity))), 
+                0px 5px 5px -1px oklch(from var(--color-black) l c h / calc(0.05 * var(--shadow-intensity))), 
+                0px 11px 6px -2px oklch(from var(--color-black) l c h / calc(0.03 * var(--shadow-intensity))), 
+                0px 19px 8px -3px oklch(from var(--color-black) l c h / calc(0.01 * var(--shadow-intensity)));
+  --shadow-lg:  0px 2px 5px -1px oklch(from var(--color-black) l c h / calc(0.06 * var(--shadow-intensity))), 
+                0px 8px 12px -1px oklch(from var(--color-black) l c h / calc(0.05 * var(--shadow-intensity))), 
+                0px 22px 16px -2px oklch(from var(--color-black) l c h / calc(0.04 * var(--shadow-intensity))), 
+                0px 32px 18px -2px oklch(from var(--color-black) l c h / calc(0.01 * var(--shadow-intensity)));
+  --shadow-xl:  0px 4px 8px -1px oklch(from var(--color-black) l c h / calc(0.06 * var(--shadow-intensity))), 
+                0px 15px 15px -1px oklch(from var(--color-black) l c h / calc(0.05 * var(--shadow-intensity))), 
+                0px 33px 20px -2px oklch(from var(--color-black) l c h / calc(0.04 * var(--shadow-intensity))), 
+                0px 58px 23px -2px oklch(from var(--color-black) l c h / calc(0.01 * var(--shadow-intensity)));
+  --shadow-2xl: 0px 13px 29px oklch(from var(--color-black) l c h / calc(0.07 * var(--shadow-intensity))), 
+                0px 53px 53px oklch(from var(--color-black) l c h / calc(0.06 * var(--shadow-intensity))), 
+                0px 119px 71px oklch(from var(--color-black) l c h / calc(0.03 * var(--shadow-intensity))), 
+                0px 211px 85px oklch(from var(--color-black) l c h / calc(0.01 * var(--shadow-intensity)));
+  
+  --ease-spring: linear(0, 0.0018, 0.007 1.16%, 0.0264 2.32%, 0.065, 0.1161 5.23%, 0.2294 7.84%, 0.6219 15.97%, 0.7307 18.58%, 0.8142, 0.8845 23.23%, 0.9479, 0.9955 28.45%, 1.0159, 1.0323 31.35%, 1.0492, 1.0602 35.42%, 1.0666 37.74%, 1.0679 40.35%, 1.0651 42.68%, 1.059 45.29%, 1.028 54.87%, 1.0158 59.22%, 1.0071, 1.0011 67.35%, 0.997 72.29%, 0.9954 78.1%, 0.9991 99.87%);
+}
+
+@utility mask-clip-padding-only {
+  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  mask-composite: exclude;
+}
+
+@utility corner-round {
+  corner-shape: round;
+}
