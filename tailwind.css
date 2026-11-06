@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Obel Mono";
+  src: url("/fonts/ObelMono-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     font-variant-numeric: slashed-zero;
@@ -33,7 +41,7 @@
 }
 
 @theme {
-  --font-primary: ui-sans-serif, system-ui, sans-serif;
+  --font-primary: "Obel Mono", ui-monospace, monospace;
 
   --color-black: #000000;
 

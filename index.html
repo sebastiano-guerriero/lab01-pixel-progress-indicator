@@ -7,10 +7,11 @@
   </head>
   <body>
     <main class="flex items-center justify-center min-h-screen font-primary bg-black">
-      <div data-name="frame" class="relative size-135 bg-[#141414] isolate overflow-hidden">
+      <div data-name="frame" class="relative size-135 bg-[#141414] isolate overflow-hidden text-[13px] text-white">
+        <!-- icon -->
         <div class="size-18 absolute z-2 left-1/2 -translate-x-1/2 top-[198px]">
           <div class="size-full relative z-3 bg-[#080808] rounded-full corner-round shadow-[0px_110px_31px_rgba(0,0,0,0.01),0px_71px_28px_rgba(0,0,0,0.06),0px_40px_24px_rgba(0,0,0,0.2),0px_18px_18px_rgba(0,0,0,0.34),0px_4px_10px_rgba(0,0,0,0.39)] bg-linear-to-t from-white/8 to-transparent">
-            <figure class="absolute left-1/2 top-1/2 -translate-1/2">
+            <figure data-animated-icons class="absolute left-1/2 top-1/2 -translate-1/2">
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 7H15.01" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" stroke="white"/>
                 <path d="M15 3H15.01" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" stroke="white"/>
@@ -93,6 +94,17 @@
           </div>
         </div>
 
+        <!-- steps -->
+        <div data-animated-steps class="h-[56px] absolute z-2 top-[282px] left-1/2 -translate-x-1/2 overflow-hidden mask-y-from-50%">
+          <ul class="flex flex-col gap-[4px]">
+            <li class="h-4 flex items-center justify-center opacity-30">Downloading required assets</li>
+            <li class="h-4 flex items-center justify-center">Checking for potential issues</li>
+            <li class="h-4 flex items-center justify-center opacity-30">Building your workspace</li>
+            <li class="h-4 flex items-center justify-center opacity-30">You're all set!</li>
+          </ul>
+        </div>
+
+        <!-- bg grid -->
         <figure class="absolute inset-0 pointer-events-none z-1">
           <img src="/images/grid.svg" alt="" class="" />
         </figure>
