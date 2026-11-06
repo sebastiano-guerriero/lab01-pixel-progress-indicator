@@ -191,19 +191,27 @@ function createIcons(figure) {
 // Step titles
 // ---------------------------------------------------------------------------
 
+// Fake 3D wheel: each label tilts on the X axis by this many degrees per step
+// away from the center, so labels above/below lean back like on a drum.
+const WHEEL_ANGLE = 10;
+
 function createSteps(container) {
   const list = container.querySelector("ul");
   const steps = [...list.children];
 
   // Move the list so the given step sits in the vertical center of the
-  // container, and mark it as active (100% opacity, others stay at 30%).
+  // container, mark it as active (100% opacity, others stay at 30%) and tilt
+  // the other labels based on their distance from it.
   function goTo(index) {
     const step = steps[index];
     const stepCenter = step.offsetTop + step.offsetHeight / 2;
     const offset = container.clientHeight / 2 - stepCenter;
 
     list.style.transform = `translateY(${offset}px)`;
-    steps.forEach((el, i) => el.toggleAttribute("data-active", i === index));
+    steps.forEach((el, i) => {
+      el.toggleAttribute("data-active", i === index);
+      if (!reducedMotion) el.style.transform = `rotateX(${(index - i) * WHEEL_ANGLE}deg)`;
+    });
   }
 
   // Set the initial state with transitions off, so nothing animates on load

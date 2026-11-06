@@ -102,12 +102,12 @@
         </div>
 
         <!-- steps -->
-        <div data-animated-steps class="invisible h-[56px] absolute z-2 top-[282px] left-1/2 -translate-x-1/2 overflow-hidden mask-y-from-50%">
-          <ul class="flex flex-col gap-[4px] transition-transform duration-700 ease-spring motion-reduce:transition-none">
-            <li data-active class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-opacity duration-500">Downloading required assets</li>
-            <li class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-opacity duration-500">Checking for potential issues</li>
-            <li class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-opacity duration-500">Building your workspace</li>
-            <li class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-opacity duration-500">You're all set!</li>
+        <div data-animated-steps class="invisible h-[56px] absolute z-2 top-[282px] left-1/2 -translate-x-1/2 overflow-hidden mask-y-from-50% mask-y-to-95% perspective-[120px]">
+          <ul class="flex flex-col transform-3d gap-[4px] transition-transform duration-700 ease-spring motion-reduce:transition-none">
+            <li data-active class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-[opacity,transform] duration-700 ease-spring">Downloading required assets</li>
+            <li class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-[opacity,transform] duration-700 ease-spring">Checking for potential issues</li>
+            <li class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-[opacity,transform] duration-700 ease-spring">Building your workspace</li>
+            <li class="h-4 flex items-center justify-center opacity-30 data-active:opacity-100 transition-[opacity,transform] duration-700 ease-spring">You're all set!</li>
           </ul>
         </div>
 
@@ -117,6 +117,15 @@
         </figure>
       </div>
     </main>
+
+    <!-- background noise -->
+    <figure class="bg-noise fixed z-100 pointer-events-none" aria-hidden="true">
+      <svg>
+        <filter id="noise-bg-fx">
+          <feTurbulence baseFrequency="0.8" />
+        </filter>
+      </svg>
+    </figure>
 
     <script type="module" src="/main.js"></script>
   </body>

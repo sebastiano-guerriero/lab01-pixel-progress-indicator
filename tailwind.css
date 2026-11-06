@@ -83,3 +83,11 @@
 @utility corner-round {
   corner-shape: round;
 }
+
+.bg-noise {
+  inset: 0;
+  pointer-events: none;
+  opacity: .1;
+  -webkit-filter: url(#noise-bg-fx) grayscale(100%);
+          filter: url(#noise-bg-fx) grayscale(100%);
+}
